@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Phone Price Predictor</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="title">Phone Price Predictor</div>
+        <form action="/" method="POST">
+            <div class="form">
+                <div class="inputfield">
+                    <label for="weight">Ratings</label>
+                    <input class="input" type="text" name="Ratings" required>
+                </div>
+                <div class="inputfield">
+                    <label for="ram">RAM (GB)</label>
+                    <input class="input" type="text" name="RAM" required>
+                </div>
+                <div class="inputfield">
+                    <label for="ram">ROM (GB)</label>
+                    <input class="input" type="text" name="ROM" required>
+                </div>
+                <div class="inputfield">
+                    <label for="weight">Mobile_Size</label>
+                    <input class="input" type="text" name="Mobile_Size" required>
+                </div>
+                <div class="inputfield">
+                    <label for="ram">Primary_Cam</label>
+                    <input class="input" type="text" name="Primary_Cam" required>
+                </div>
+                <div class="inputfield">
+                    <label for="ram">Selfi_Cam</label>
+                    <input class="input" type="text" name="Selfi_Cam" required>
+                </div>
+                <div class="inputfield">
+                    <label for="ram">Battery_Power</label>
+                    <input class="input" type="text" name="Battery_Power" required>
+                </div>
+                <div class="inputfield">
+                    <label for="brand">Brand</label>
+                    <div class = "custom_select">
+                        <select name="brand" id="brand">
+                            <option value="" selected hidden>Select</option>
+                            <option value="Apple IPhone 11">Apple IPhone 11</option>
+                            <option value="Apple iPhone 12">Apple iPhone 12</option>
+                            <option value="Nokia  216">Nokia  216</option>
+                            <option value="Nokia  415">Nokia  415</option>
+                            <option value="Oppo  A17">Oppo  A17</option>
+                            <option value="Oppo  A9">Oppo  A9</option>
+                            <option value="Redmi A9">Redmi A9</option>
+                            <option value="Redmi K20">Redmi K20</option>
+                            <option value="Samsung  Galaxy A50">Samsung  Galaxy A50</option>
+                            <option value="Samsung Galaxy">Samsung Galaxy</option>
+                            <option value="Vivo  V21">Vivo  V21</option>
+                            <option value="Vivo  Y81">Vivo  Y81</option>                           
+                        </select>
+                    </div>
+                </div>  
+                <div class="inputfield">
+                    <input class="btn" type="submit" value="Predict Price">
+                </div>           
+        </form>
+        <div class="result">
+            {% if pred != 0 %}
+            <p>Estimated Price : USD {{pred}}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
